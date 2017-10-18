@@ -1,0 +1,37 @@
+<h2>{{turma.nome}}</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Nota 1</th>
+      <th>Nota 2</th>
+      <th>Nota 3</th>
+      <th>Nota 4</th>
+      <th>Media</th>
+      <th>Presença</th>
+      <th>Situação</th>
+      <th><button  class="btn btn-sm btn-lg" (click)="novoAlu()" > <span class="glyphicon glyphicon-plus">+</span>Novo</button></th>
+    </tr>
+    
+  </thead>
+  <tbody>
+    <tr *ngFor="let aluno of turma.alunos" [class]="corLinha(aluno)">
+
+      <td>{{aluno.id}}</td>
+      <td>{{aluno.nome}}</td>
+      <td>{{aluno.bin1}}</td>
+      <td>{{aluno.bin2}}</td>
+      <td>{{aluno.bin3}}</td>
+      <td>{{aluno.bin4}}</td>
+      <td>{{aluno.media}}</td>
+      <td>{{aluno.pre}}</td>
+      <td>{{aluno.situacao}}</td>
+
+      <td>
+        <button class="btn btn-sm btn-danger" (click)="excluir(aluno)">Excluir</button>
+        <button class="btn btn-sm btn-primary" (click)="editar(aluno)">Editar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

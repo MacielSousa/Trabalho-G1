@@ -1,0 +1,32 @@
+<div class="container">
+  <!--<h1>Gerenciador de Alunos</h1>-->
+
+  <div class="row">
+    <div class="col" *ngIf="listandoTurma">
+      <app-lista-de-turmas [turmas]="turmas" (onExcluirTurma)="excluirTurma($event)" (onEditarTurma)="editarTurma($event)" (detalheTurma)="listarAlunosTurma($event)" (novaTurma)="novaTurma()"></app-lista-de-turmas>
+      <!-- <button type="button" class="btn btn-success" (click)=""> << </button> -->
+    </div>
+  </div>
+  <div class="row" >
+    <div class="col" *ngIf="cadastrarTurma || editandoTurma">
+     <app-formulario-turma [turma]="turma" (onCadastraTurma)="cadastraTurma($event)"></app-formulario-turma>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col" *ngIf="listandoAluno">
+      <app-lista-de-alunos [turma]="turma" (onExcluir)="excluir($event)" (onEditar)="editar($event)" (novoAluno)="novoAluno()"></app-lista-de-alunos>
+     <button type="button" class="btn btn-success" (click)="listarTurmas()"> << </button>
+    </div>
+
+    <div class="row">
+      <div class="col" *ngIf="editandoAluno || cadastrandoAluno">
+        <h2>Alunos</h2>
+        <app-formulario [novo]="novo" (onCadastrar)="cadastrar($event)"></app-formulario>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

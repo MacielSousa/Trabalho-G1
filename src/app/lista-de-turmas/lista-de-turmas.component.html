@@ -1,0 +1,33 @@
+<h2>Gerenciar Turma</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Alunos</th>
+      <th>Aprovados</th>
+      <th>Pendentes</th>
+      <th>Reprovados</th>
+      <th><button  class="btn btn-sm btn-lg" (click)="nova()"> <span class="glyphicon glyphicon-plus">+</span>Nova</button></th>
+      <!-- id: number, nome: string, alunos?: Array<Aluno> -->
+    </tr>
+    
+  </thead>
+  <tbody>
+    <tr *ngFor="let turma of turmas">
+
+      <td>{{turma.id}}</td>
+      <td>{{turma.nome}}</td>
+      <td>{{turma.qtAlunos}}</td>
+      <td>{{turma.qtAprovados}}</td>
+      <td>{{turma.qtPendentes}}</td>
+      <td>{{turma.qtReprovados}}</td>
+
+      <td>
+        <button class="btn btn-sm btn-danger" (click)="excluir(turma)">Excluir</button>
+        <button class="btn btn-sm btn-primary" (click)="editar(turma)">Editar</button>
+        <button class="btn btn-sm btn-lg" (click)="detalhe(turma)"> <span class="glyphicon glyphicon-plus">+</span>Detalhes</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,7 @@
+<form #formCadastroTurma="ngForm" (ngSubmit)="cadastrar()">
+  <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="turma.nome" required>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!formCadastroTurma.valid">Salvar</button>
+</form>
