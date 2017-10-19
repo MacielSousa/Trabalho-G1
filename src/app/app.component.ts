@@ -170,7 +170,7 @@ export class AppComponent implements OnInit {
         media = somaNota/cont
         aluno.media = media
         console.log(media);
-        
+        somaNota = 0 
         if (media >= 7 && aluno.pre >= 150 && cont == 4) {
           aluno.situacao = 'Aprovado'
           qtAprovados++
@@ -196,6 +196,7 @@ export class AppComponent implements OnInit {
         turma.qtPendentes = qtPendentes
         turma.qtReprovados = qtReprovados
         cont=0
+        media = 0
       }
     }
     else {
