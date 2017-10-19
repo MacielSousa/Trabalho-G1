@@ -8,6 +8,7 @@
       <th>Aprovados</th>
       <th>Pendentes</th>
       <th>Reprovados</th>
+      <th>Media da Turma</th>
       <th><button  class="btn btn-sm btn-lg" (click)="nova()"> <span class="glyphicon glyphicon-plus">+</span>Nova</button></th>
       <!-- id: number, nome: string, alunos?: Array<Aluno> -->
     </tr>
@@ -22,6 +23,7 @@
       <td>{{turma.qtAprovados}}</td>
       <td>{{turma.qtPendentes}}</td>
       <td>{{turma.qtReprovados}}</td>
+      <td>{{turma.qtMedia}}</td>
 
       <td>
         <button class="btn btn-sm btn-danger" (click)="excluir(turma)">Excluir</button>

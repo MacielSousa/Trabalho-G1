@@ -45,26 +45,4 @@ export class ListaDeTurmasComponent implements OnInit {
   {
     this.novaTurma.emit();
   }
-
-  
-  
-/** 
-  corLinha(aluno: Aluno)
-  {
-    if(aluno.situacao == 'Aprovado')
-    {
-      return 'alert alert-success'
-    }
-    else
-    {
-      if(aluno.situacao == 'Pendente')
-      {
-        return 'alert alert-warning'
-      }
-      else{
-        return 'alert alert-danger'
-      }
-    }
-  }
-*/
 }

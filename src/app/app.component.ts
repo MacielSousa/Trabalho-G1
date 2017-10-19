@@ -155,6 +155,8 @@ export class AppComponent implements OnInit {
     var qtAprovados = 0
     var qtPendentes = 0
     var qtReprovados = 0
+    var qtMedia = 0
+    var contMedia = 0
 
     if (turma.alunos != null) {
       for (let aluno of turma.alunos) {
@@ -164,12 +166,13 @@ export class AppComponent implements OnInit {
           if (notas[i] != null) {
             cont++
             somaNota = somaNota + notas[i]
-            console.log(somaNota);
+  
           }
         }
+        if(cont > 0){contMedia++}
         media = somaNota/cont
+        qtMedia = qtMedia + media
         aluno.media = media
-        console.log(media);
         somaNota = 0 
         if (media >= 7 && aluno.pre >= 150 && cont == 4) {
           aluno.situacao = 'Aprovado'
@@ -195,6 +198,7 @@ export class AppComponent implements OnInit {
         turma.qtAprovados = qtAprovados
         turma.qtPendentes = qtPendentes
         turma.qtReprovados = qtReprovados
+        turma.qtMedia = qtMedia/contMedia
         cont=0
         media = 0
       }
