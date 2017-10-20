@@ -149,13 +149,13 @@ export class AppComponent implements OnInit {
     //Variaveis de Calculo de Nota/Saber a situação dos Alunos
     var cont = 0
     var somaNota = 0
-    var media = 0
+    var media = null
     //Variaveis de dados das Turmas
     var qtAlunos = 0
     var qtAprovados = 0
     var qtPendentes = 0
     var qtReprovados = 0
-    var qtMedia = 0
+    var qtMedia = null
     var contMedia = 0
 
     if (turma.alunos != null) {
@@ -164,14 +164,21 @@ export class AppComponent implements OnInit {
         var notas = [aluno.bin1, aluno.bin2, aluno.bin3, aluno.bin4]
         for (var i = 0; i < notas.length; i++) {
           if (notas[i] != null) {
+            console.log(notas[i]);
+            
             cont++
+            console.log(cont);
+            
             somaNota = somaNota + notas[i]
   
           }
         }
+
         if(cont > 0){contMedia++}
-        media = somaNota/cont
-        qtMedia = qtMedia + media
+        if(cont > 0){media = somaNota/cont}
+        if(cont > 0){qtMedia = qtMedia + media}
+        
+        
         aluno.media = media
         somaNota = 0 
         if (media >= 7 && aluno.pre >= 150 && cont == 4) {
@@ -179,7 +186,7 @@ export class AppComponent implements OnInit {
           qtAprovados++
         }
         else {
-          if (cont < 4 && aluno.pre >= 150) {
+          if (cont < 4 && aluno.pre >= 150 || aluno.pre == null) {
             aluno.situacao = 'Pendente'
             qtPendentes++
           }

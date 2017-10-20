@@ -1,27 +1,27 @@
 <form #formCadastro="ngForm" (ngSubmit)="cadastrar()">
   <div class="form-group">
       <label for="nome">Nome:</label>
-      <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="novo.nome" required>
+      <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="novo.nome" >
   </div>
   <div class="form-group">
       <label for="nota1">Nota 1:</label>
-      <input type="number" class="form-control" id="nota1" name="nota1" [(ngModel)]="novo.bin1" required>
+      <input type="number" class="form-control" id="nota1" name="nota1" [(ngModel)]="novo.bin1" >
   </div>
   <div class="form-group">
     <label for="nota2">Nota 2:</label>
-    <input type="number" class="form-control" id="nota2" name="nota2" [(ngModel)]="novo.bin2" required>
+    <input type="number" class="form-control" id="nota2" name="nota2" [(ngModel)]="novo.bin2" >
 </div>
 <div class="form-group">
     <label for="nota3">Nota 3:</label>
-    <input type="number" class="form-control" id="nota3" name="nota3" [(ngModel)]="novo.bin3" required>
+    <input type="number" class="form-control" id="nota3" name="nota3" [(ngModel)]="novo.bin3" >
 </div>
 <div class="form-group">
     <label for="nota4">Nota 4:</label>
-    <input type="number" class="form-control" id="nota4" name="nota4" [(ngModel)]="novo.bin4" required>
+    <input type="number" class="form-control" id="nota4" name="nota4" [(ngModel)]="novo.bin4" >
 </div>
 <div class="form-group">
     <label for="pre">Presença:</label>
-    <input type="number" class="form-control" id="presenca" name="presenca" [(ngModel)]="novo.pre" required>
+    <input type="number" class="form-control" id="presenca" name="presenca" [(ngModel)]="novo.pre">
 </div>
   <button type="submit" class="btn btn-primary" [disabled]="!formCadastro.valid">Salvar</button>
 </form>
